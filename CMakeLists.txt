@@ -15,3 +15,15 @@ target_include_directories(unittest PRIVATE include/ external/)
 
 enable_testing()
 add_test(NAME unittest COMMAND unittest)
+
+if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+    add_compile_options(
+            -fsanitize=address
+            -fsanitize=undefined
+    )
+
+    add_link_options(
+            -fsanitize=address
+            -fsanitize=undefined
+    )
+endif()
