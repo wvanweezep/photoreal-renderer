@@ -1,6 +1,7 @@
 #pragma once
 
 #include <concepts>
+#include <ostream>
 
 template<typename T>
 concept Arithmetic = std::integral<T> || std::floating_point<T>;
@@ -61,7 +62,7 @@ struct Vec2 {
 
     [[nodiscard]]
     constexpr auto length() const {
-        return std::sqrt(x * x + y * y);
+        return sqrt(x * x + y * y);
     }
 
     [[nodiscard]]
@@ -105,6 +106,11 @@ template <Arithmetic T>
 constexpr Vec2<T> operator/(Vec2<T> vec, T scalar) {
     vec /= scalar;
     return vec;
+}
+
+template <Arithmetic T>
+std::ostream& operator<<(std::ostream& os, const Vec2<T>& v) {
+    return os << "Vec2(" << v.x << ", " << v.y << ")";
 }
 
 
