@@ -1,6 +1,7 @@
 #include "math/vec2.h"
 
 #include <doctest/doctest.h>
+#include <cmath>
 
 #define VEC2_ALL_TYPES int, float
 #define VEC2_INTEGRAL_TYPES int
