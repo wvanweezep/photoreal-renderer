@@ -62,7 +62,7 @@ struct Vec2 {
 
     [[nodiscard]]
     constexpr auto length() const {
-        return sqrt(x * x + y * y);
+        return std::sqrt(x * x + y * y);
     }
 
     [[nodiscard]]

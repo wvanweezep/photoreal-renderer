@@ -89,7 +89,7 @@ TEST_CASE_TEMPLATE("vector length", T, VEC2_ALL_TYPES) {
     Vec2<T> v{x, y};
 
     SUBCASE("normal") {
-        CHECK_EQ(v.length(), sqrt(x*x + y*y));
+        CHECK_EQ(v.length(), std::sqrt(x*x + y*y));
     }
 
     SUBCASE("squared") {
